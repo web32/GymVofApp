@@ -28,11 +28,10 @@
 
 +(NSString*)httpStringFromURL:(NSURL *)url
 {
-    //Check if there is an internet connection
-
-    
-    
+    //Erstelle eine Anfrage mit der übergebenen URL
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    //Setze den User-Agent auf die AppVersion
     NSString *userAgent = [NSString stringWithFormat:@"MS-GymVof-App-%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
     [request addValue:userAgent forHTTPHeaderField:@"User-Agent"];
     
@@ -40,33 +39,29 @@
     NSURLResponse *response;
     NSError *error;
     
+    //Sende die Anfrage und speichere die Daten als NSData
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    //Check if the request has been redirected
-    if (response.URL != url && false) {
-        NSLog(@"Response URL does not match the request URL: %@ != %@", url, response.URL);
-        return nil;
-    }
+
     
     if(error)
     {
-        //If the error exists print it to the console
-        NSLog(@"%@", error);
+        //Sollte ein Fehler bestehen wir er in der Konsole ausgegeben
+        NSLog(@"Fehler beim download: %@", error);
     }
     
+    //Konvertiere die Bytes zuerst als UTF8
     NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
+    //Wenn die Konvertierung mit UTF8 fehlschlägt, gehen wir von ISO-Latin-1 aus
     if (dataString.length == 0) {
         dataString = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
     }
     
     
-    
-    //Return the string or nil of no data was recieved
+    //Wenn die Konvertierung mit beiden Kodierungen fehlschlägt wird null zurückgegeben, sonst der String selbst
     if(dataString) {
         return dataString;
-    }
-    else
+    } else
     {
         return nil;
     }
