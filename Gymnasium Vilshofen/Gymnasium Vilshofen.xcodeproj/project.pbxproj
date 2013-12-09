@@ -13,15 +13,20 @@
 		3C8BB37C18562F5B00EECE97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB37A18562F5B00EECE97 /* InfoPlist.strings */; };
 		3C8BB37E18562F5B00EECE97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BB37D18562F5B00EECE97 /* main.m */; };
 		3C8BB38218562F5B00EECE97 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BB38118562F5B00EECE97 /* MSAppDelegate.m */; };
-		3C8BB38518562F5B00EECE97 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB38318562F5B00EECE97 /* Main_iPhone.storyboard */; };
-		3C8BB38818562F5B00EECE97 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB38618562F5B00EECE97 /* Main_iPad.storyboard */; };
-		3C8BB38B18562F5B00EECE97 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BB38A18562F5B00EECE97 /* MSViewController.m */; };
 		3C8BB38D18562F5B00EECE97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB38C18562F5B00EECE97 /* Images.xcassets */; };
 		3C8BB39418562F5B00EECE97 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB39318562F5B00EECE97 /* XCTest.framework */; };
 		3C8BB39518562F5B00EECE97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB37118562F5B00EECE97 /* Foundation.framework */; };
 		3C8BB39618562F5B00EECE97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB37518562F5B00EECE97 /* UIKit.framework */; };
 		3C8BB39E18562F5B00EECE97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB39C18562F5B00EECE97 /* InfoPlist.strings */; };
 		3C8BB3A018562F5B00EECE97 /* Gymnasium_VilshofenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BB39F18562F5B00EECE97 /* Gymnasium_VilshofenTests.m */; };
+		3C8BB3CA18564BC100EECE97 /* Appsee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3C918564BC100EECE97 /* Appsee.framework */; };
+		3C8BB3CC18564BD200EECE97 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3CB18564BD200EECE97 /* AVFoundation.framework */; };
+		3C8BB3CE18564BD800EECE97 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3CD18564BD800EECE97 /* CoreMedia.framework */; };
+		3C8BB3D018564BDB00EECE97 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3CF18564BDB00EECE97 /* CoreVideo.framework */; };
+		3C8BB3D218564BE700EECE97 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3D118564BE600EECE97 /* QuartzCore.framework */; };
+		3C8BB3D418564BF300EECE97 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3D318564BF300EECE97 /* SystemConfiguration.framework */; };
+		3C8BB3D718564C4F00EECE97 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB3D518564C4F00EECE97 /* Main_iPhone.storyboard */; };
+		3C8BB3D818564C4F00EECE97 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB3D618564C4F00EECE97 /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,16 +50,20 @@
 		3C8BB37F18562F5B00EECE97 /* Gymnasium Vilshofen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gymnasium Vilshofen-Prefix.pch"; sourceTree = "<group>"; };
 		3C8BB38018562F5B00EECE97 /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
 		3C8BB38118562F5B00EECE97 /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
-		3C8BB38418562F5B00EECE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		3C8BB38718562F5B00EECE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		3C8BB38918562F5B00EECE97 /* MSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
-		3C8BB38A18562F5B00EECE97 /* MSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
 		3C8BB38C18562F5B00EECE97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C8BB39218562F5B00EECE97 /* Gymnasium VilshofenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gymnasium VilshofenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8BB39318562F5B00EECE97 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C8BB39B18562F5B00EECE97 /* Gymnasium VilshofenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gymnasium VilshofenTests-Info.plist"; sourceTree = "<group>"; };
 		3C8BB39D18562F5B00EECE97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C8BB39F18562F5B00EECE97 /* Gymnasium_VilshofenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gymnasium_VilshofenTests.m; sourceTree = "<group>"; };
+		3C8BB3C918564BC100EECE97 /* Appsee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Appsee.framework; sourceTree = "<group>"; };
+		3C8BB3CB18564BD200EECE97 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3C8BB3CD18564BD800EECE97 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3C8BB3CF18564BDB00EECE97 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		3C8BB3D118564BE600EECE97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3C8BB3D318564BF300EECE97 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3C8BB3D518564C4F00EECE97 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		3C8BB3D618564C4F00EECE97 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +71,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C8BB3CA18564BC100EECE97 /* Appsee.framework in Frameworks */,
+				3C8BB3D418564BF300EECE97 /* SystemConfiguration.framework in Frameworks */,
+				3C8BB3D218564BE700EECE97 /* QuartzCore.framework in Frameworks */,
 				3C8BB37418562F5B00EECE97 /* CoreGraphics.framework in Frameworks */,
+				3C8BB3D018564BDB00EECE97 /* CoreVideo.framework in Frameworks */,
+				3C8BB3CE18564BD800EECE97 /* CoreMedia.framework in Frameworks */,
+				3C8BB3CC18564BD200EECE97 /* AVFoundation.framework in Frameworks */,
 				3C8BB37618562F5B00EECE97 /* UIKit.framework in Frameworks */,
 				3C8BB37218562F5B00EECE97 /* Foundation.framework in Frameworks */,
 			);
@@ -103,6 +118,12 @@
 		3C8BB37018562F5B00EECE97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C8BB3D318564BF300EECE97 /* SystemConfiguration.framework */,
+				3C8BB3D118564BE600EECE97 /* QuartzCore.framework */,
+				3C8BB3CF18564BDB00EECE97 /* CoreVideo.framework */,
+				3C8BB3CD18564BD800EECE97 /* CoreMedia.framework */,
+				3C8BB3CB18564BD200EECE97 /* AVFoundation.framework */,
+				3C8BB3C918564BC100EECE97 /* Appsee.framework */,
 				3C8BB37118562F5B00EECE97 /* Foundation.framework */,
 				3C8BB37318562F5B00EECE97 /* CoreGraphics.framework */,
 				3C8BB37518562F5B00EECE97 /* UIKit.framework */,
@@ -114,12 +135,11 @@
 		3C8BB37718562F5B00EECE97 /* Gymnasium Vilshofen */ = {
 			isa = PBXGroup;
 			children = (
+				3C8BB3D918564D2A00EECE97 /* VCs */,
+				3C8BB3D518564C4F00EECE97 /* Main_iPhone.storyboard */,
+				3C8BB3D618564C4F00EECE97 /* Main_iPad.storyboard */,
 				3C8BB38018562F5B00EECE97 /* MSAppDelegate.h */,
 				3C8BB38118562F5B00EECE97 /* MSAppDelegate.m */,
-				3C8BB38318562F5B00EECE97 /* Main_iPhone.storyboard */,
-				3C8BB38618562F5B00EECE97 /* Main_iPad.storyboard */,
-				3C8BB38918562F5B00EECE97 /* MSViewController.h */,
-				3C8BB38A18562F5B00EECE97 /* MSViewController.m */,
 				3C8BB38C18562F5B00EECE97 /* Images.xcassets */,
 				3C8BB37818562F5B00EECE97 /* Supporting Files */,
 			);
@@ -155,6 +175,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3C8BB3D918564D2A00EECE97 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +192,7 @@
 				3C8BB36A18562F5B00EECE97 /* Sources */,
 				3C8BB36B18562F5B00EECE97 /* Frameworks */,
 				3C8BB36C18562F5B00EECE97 /* Resources */,
+				3C8BB3C818564B0600EECE97 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -232,10 +260,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C8BB38818562F5B00EECE97 /* Main_iPad.storyboard in Resources */,
 				3C8BB38D18562F5B00EECE97 /* Images.xcassets in Resources */,
-				3C8BB38518562F5B00EECE97 /* Main_iPhone.storyboard in Resources */,
+				3C8BB3D818564C4F00EECE97 /* Main_iPad.storyboard in Resources */,
 				3C8BB37C18562F5B00EECE97 /* InfoPlist.strings in Resources */,
+				3C8BB3D718564C4F00EECE97 /* Main_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,13 +277,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C8BB3C818564B0600EECE97 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nVERSIONNUM=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nNEWSUBVERSION=`echo $VERSIONNUM | awk -F \".\" '{print $3}'`\nNEWSUBVERSION=$(($NEWSUBVERSION + 1))\nNEWVERSIONSTRING=`echo $VERSIONNUM | awk -F \".\" '{print $1 \".\" $2 \".'$NEWSUBVERSION'\" }'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $NEWVERSIONSTRING\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C8BB36A18562F5B00EECE97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3C8BB38218562F5B00EECE97 /* MSAppDelegate.m in Sources */,
-				3C8BB38B18562F5B00EECE97 /* MSViewController.m in Sources */,
 				3C8BB37E18562F5B00EECE97 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,22 +328,6 @@
 				3C8BB37B18562F5B00EECE97 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3C8BB38318562F5B00EECE97 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C8BB38418562F5B00EECE97 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		3C8BB38618562F5B00EECE97 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C8BB38718562F5B00EECE97 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		3C8BB39C18562F5B00EECE97 /* InfoPlist.strings */ = {
@@ -393,6 +420,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gymnasium Vilshofen/Gymnasium Vilshofen-Prefix.pch";
 				INFOPLIST_FILE = "Gymnasium Vilshofen/Gymnasium Vilshofen-Info.plist";
@@ -406,6 +437,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gymnasium Vilshofen/Gymnasium Vilshofen-Prefix.pch";
 				INFOPLIST_FILE = "Gymnasium Vilshofen/Gymnasium Vilshofen-Info.plist";
@@ -475,6 +510,7 @@
 				3C8BB3A518562F5B00EECE97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C8BB3A618562F5B00EECE97 /* Build configuration list for PBXNativeTarget "Gymnasium VilshofenTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +519,7 @@
 				3C8BB3A818562F5B00EECE97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
