@@ -20,6 +20,9 @@
     //Farbe der Navigation-Bar auf rot ändern
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(161.0/255) green:(15.0/255) blue:(21.0/255) alpha:1]];
     
+    //Badgenumber wieder auf 0 setzen
+    application.applicationIconBadgeNumber = 0;
+    
     return YES;
 }
 							
