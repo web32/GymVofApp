@@ -27,6 +27,7 @@
 		3C8BB3D418564BF300EECE97 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3D318564BF300EECE97 /* SystemConfiguration.framework */; };
 		3C8BB3D718564C4F00EECE97 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB3D518564C4F00EECE97 /* Main_iPhone.storyboard */; };
 		3C8BB3D818564C4F00EECE97 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8BB3D618564C4F00EECE97 /* Main_iPad.storyboard */; };
+		3C8BB3DC18564E4D00EECE97 /* MSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BB3DA18564E4D00EECE97 /* MSUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		3C8BB3D318564BF300EECE97 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3C8BB3D518564C4F00EECE97 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		3C8BB3D618564C4F00EECE97 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		3C8BB3DA18564E4D00EECE97 /* MSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUtility.m; sourceTree = "<group>"; };
+		3C8BB3DB18564E4D00EECE97 /* MSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUtility.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				3C8BB38018562F5B00EECE97 /* MSAppDelegate.h */,
 				3C8BB38118562F5B00EECE97 /* MSAppDelegate.m */,
 				3C8BB38C18562F5B00EECE97 /* Images.xcassets */,
+				3C8BB3DA18564E4D00EECE97 /* MSUtility.m */,
+				3C8BB3DB18564E4D00EECE97 /* MSUtility.h */,
 				3C8BB37818562F5B00EECE97 /* Supporting Files */,
 			);
 			path = "Gymnasium Vilshofen";
@@ -298,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C8BB3DC18564E4D00EECE97 /* MSUtility.m in Sources */,
 				3C8BB38218562F5B00EECE97 /* MSAppDelegate.m in Sources */,
 				3C8BB37E18562F5B00EECE97 /* main.m in Sources */,
 			);
