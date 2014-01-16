@@ -17,7 +17,6 @@
 		3C317DE018884AC80019A8B3 /* libLocalyticsAMP_x64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C317BA718884AC60019A8B3 /* libLocalyticsAMP_x64.a */; };
 		3C317DE118884AC80019A8B3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C317BAA18884AC60019A8B3 /* Main_iPad.storyboard */; };
 		3C317DE218884AC80019A8B3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C317BAB18884AC60019A8B3 /* Main_iPhone.storyboard */; };
-		3C317DE318884AC80019A8B3 /* Main_iPhone_conflict-20131226-140553.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C317BAC18884AC60019A8B3 /* Main_iPhone_conflict-20131226-140553.storyboard */; };
 		3C317DE418884AC80019A8B3 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C317BAE18884AC60019A8B3 /* MSAppDelegate.m */; };
 		3C317DE518884AC80019A8B3 /* MSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C317BB018884AC60019A8B3 /* MSTabBarController.m */; };
 		3C317DE618884AC80019A8B3 /* MSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C317BB218884AC60019A8B3 /* MSUtility.m */; };
@@ -588,7 +587,6 @@
 		3C317BA918884AC60019A8B3 /* LocalyticsSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsSession.h; sourceTree = "<group>"; };
 		3C317BAA18884AC60019A8B3 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		3C317BAB18884AC60019A8B3 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
-		3C317BAC18884AC60019A8B3 /* Main_iPhone_conflict-20131226-140553.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main_iPhone_conflict-20131226-140553.storyboard"; sourceTree = "<group>"; };
 		3C317BAD18884AC60019A8B3 /* MSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
 		3C317BAE18884AC60019A8B3 /* MSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
 		3C317BAF18884AC60019A8B3 /* MSTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabBarController.h; sourceTree = "<group>"; };
@@ -1192,7 +1190,6 @@
 				3C317BA618884AC60019A8B3 /* Localytics */,
 				3C317BAA18884AC60019A8B3 /* Main_iPad.storyboard */,
 				3C317BAB18884AC60019A8B3 /* Main_iPhone.storyboard */,
-				3C317BAC18884AC60019A8B3 /* Main_iPhone_conflict-20131226-140553.storyboard */,
 				3C317BAD18884AC60019A8B3 /* MSAppDelegate.h */,
 				3C317BAE18884AC60019A8B3 /* MSAppDelegate.m */,
 				3C317BAF18884AC60019A8B3 /* MSTabBarController.h */,
@@ -2376,7 +2373,6 @@
 				3C317FA318884AC80019A8B3 /* glyphicons_437_hockey.png in Resources */,
 				3C317DFA18884AC80019A8B3 /* glyphicons_012_heart.png in Resources */,
 				3C317F9218884AC80019A8B3 /* glyphicons_420_tower.png in Resources */,
-				3C317DE318884AC80019A8B3 /* Main_iPhone_conflict-20131226-140553.storyboard in Resources */,
 				3C317E7118884AC80019A8B3 /* glyphicons_131_inbox_plus.png in Resources */,
 				3C317FD218884AC80019A8B3 /* glyphicons_social_14_dribbble.png in Resources */,
 				3C317E7E18884AC80019A8B3 /* glyphicons_144_folder_open.png in Resources */,
