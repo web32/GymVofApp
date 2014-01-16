@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MSUtility : NSObject
+
+
+
+@interface MSUtility : NSObject <NSURLConnectionDelegate>
+
++(MSUtility*)sharedInstance;
 
 +(NSString*)httpStringFromURL:(NSURL *)url;
 +(NSString *)cleanString:(NSString *)input;
+
 
 @end

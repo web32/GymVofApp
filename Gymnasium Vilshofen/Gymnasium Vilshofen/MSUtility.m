@@ -8,6 +8,8 @@
 
 #import "MSUtility.h"
 
+
+
 @implementation NSString (NSAddition)
 -(NSString*)stringBetweenString:(NSString*)start andString:(NSString*)end {
     NSScanner* scanner = [NSScanner scannerWithString:self];
@@ -25,6 +27,40 @@
 
 @implementation MSUtility
 
+static MSUtility *sharedInstance = nil;
+
++(MSUtility *) sharedInstance {
+    if (!sharedInstance) {
+        sharedInstance = [[MSUtility alloc] init];
+    }
+    return sharedInstance;
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    NSLog(@"got auth challange");
+    
+    if ([challenge previousFailureCount] == 0) {
+        [[challenge sender] useCredential:
+         [NSURLCredential credentialWithUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"u"]
+                                    password:[[NSUserDefaults standardUserDefaults] objectForKey:@"p"]
+                                 persistence:NSURLCredentialPersistencePermanent] forAuthenticationChallenge:challenge];
+    } else {
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+    }
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Netzwerk-Fehler"
+                                                    message:@"Die Datei konnte nicht geladen werden!"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
 
 +(NSString*)httpStringFromURL:(NSURL *)url
 {
@@ -32,9 +68,9 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     //Setze den User-Agent auf die AppVersion
-    NSString *userAgent = [NSString stringWithFormat:@"MS-GymVof-App-%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    NSString *userAgent = [NSString stringWithFormat:@"MS-GymVof-App-%@-%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [[UIDevice currentDevice] name]];
     [request addValue:userAgent forHTTPHeaderField:@"User-Agent"];
-    
+    [request setTimeoutInterval:5];
     
     NSURLResponse *response;
     NSError *error;
@@ -80,5 +116,7 @@
     
     return [NSString stringWithString:aString];
 }
+
+
 
 @end
