@@ -36,20 +36,6 @@ static MSUtility *sharedInstance = nil;
     return sharedInstance;
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-    NSLog(@"got auth challange");
-    
-    if ([challenge previousFailureCount] == 0) {
-        [[challenge sender] useCredential:
-         [NSURLCredential credentialWithUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"u"]
-                                    password:[[NSUserDefaults standardUserDefaults] objectForKey:@"p"]
-                                 persistence:NSURLCredentialPersistencePermanent] forAuthenticationChallenge:challenge];
-    } else {
-        [[challenge sender] cancelAuthenticationChallenge:challenge];
-    }
-}
-
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Netzwerk-Fehler"
