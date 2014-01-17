@@ -50,18 +50,6 @@ static MSUtility *sharedInstance = nil;
     }
 }
 
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Netzwerk-Fehler"
-                                                    message:@"Die Datei konnte nicht geladen werden!"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    
-}
-
-
 +(NSString*)httpStringFromURL:(NSURL *)url
 {
     //Erstelle eine Anfrage mit der übergebenen URL
