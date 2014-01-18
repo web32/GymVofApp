@@ -10,7 +10,7 @@
 
 @interface MSNewsCell : UITableViewCell
 
-@property (nonatomic) IBOutlet UILabel *textLabel;
+@property IBOutlet UILabel *textLabel;
 
 -(void)setCellText:(NSString *)text;
 

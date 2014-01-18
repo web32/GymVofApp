@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "MSUtility.h"
+#import "MSPush.h"
 #import "LocalyticsSession.h"
 
 @interface MSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property MSPush *pushManager;
 
 @end

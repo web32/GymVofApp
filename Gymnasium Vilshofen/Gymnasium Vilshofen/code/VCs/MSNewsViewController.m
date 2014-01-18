@@ -149,9 +149,6 @@ static NSURLConnection *con;
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSLog(@"Should load %@", request.URL.host);
-    
-    
     if ([request.URL.host isEqualToString:@"eltern.gym-vilshofen.de"]) {
         
         
@@ -168,26 +165,17 @@ static NSURLConnection *con;
     }
     
     con = [[NSURLConnection alloc] initWithRequest:request delegate:[MSUtility sharedInstance]];
-    
-    
-    
+
     return YES;
-    
-    
-    
-    
-    
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"Start loading");
     self.loading.hidden = NO;
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"Finished loading");
     self.loading.hidden = YES;
 }
 

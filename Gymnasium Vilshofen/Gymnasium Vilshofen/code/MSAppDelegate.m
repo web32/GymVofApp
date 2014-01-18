@@ -15,6 +15,7 @@
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:
                                                                 UIApplicationBackgroundFetchIntervalMinimum];
 
+    self.pushManager = [[MSPush alloc] init];
     
     
     //Farbe der Navigation-Bar auf rot ändern

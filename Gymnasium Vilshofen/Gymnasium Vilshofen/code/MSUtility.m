@@ -37,9 +37,7 @@ static MSUtility *sharedInstance = nil;
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-    NSLog(@"got auth challange");
-    
+{    
     if ([challenge previousFailureCount] == 0) {
         [[challenge sender] useCredential:
          [NSURLCredential credentialWithUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"u"]
