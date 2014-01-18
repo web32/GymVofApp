@@ -26,14 +26,21 @@
 
 @implementation MSUtility
 
-static MSUtility *sharedInstance = nil;
-static NSURLSession *cachedSession = nil;
+static MSUtility *sharedInstance;
+static NSURLSession *sharedSession;
 
 +(MSUtility *) sharedInstance {
     if (!sharedInstance) {
         sharedInstance = [[MSUtility alloc] init];
     }
     return sharedInstance;
+}
+
++(NSURLSession *) sharedSession {
+    if (!sharedSession) {
+        sharedSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:[MSUtility sharedInstance] delegateQueue:nil];
+    }
+    return sharedSession;
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
@@ -48,13 +55,22 @@ static NSURLSession *cachedSession = nil;
     }
 }
 
-+(void)loadURL:(NSURL *)url withCompletionHandler:(void (^)(NSString *response))completionHandler
+-(void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
 {
-    if(!cachedSession) {
-        cachedSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:[MSUtility sharedInstance] delegateQueue:nil];
+    if ([challenge previousFailureCount] == 0) {
+        [[challenge sender] useCredential:
+         [NSURLCredential credentialWithUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"u"]
+                                    password:[[NSUserDefaults standardUserDefaults] objectForKey:@"p"]
+                                 persistence:NSURLCredentialPersistencePermanent] forAuthenticationChallenge:challenge];
+    } else {
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
     }
     
-    [[cachedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+}
+
++(void)loadURL:(NSURL *)url withCompletionHandler:(void (^)(NSString *response))completionHandler
+{
+    [[[MSUtility sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         //Konvertiere die Bytes zuerst als UTF8
         NSString *stringResponse = [MSUtility cleanString:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
         

@@ -14,7 +14,7 @@
 
 @implementation MSNewsViewController
 
-static NSURLConnection *con;
+static NSURLSessionDataTask *task;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,26 +62,14 @@ static NSURLConnection *con;
 -(void)loadNews
 {
     //Load the news-webpage
-    dispatch_async(dispatch_get_main_queue(), ^() {
-        self.loading.hidden = NO;
-        
-        
-        NSURL *url = [NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/news"];
-        NSString *http = [MSUtility httpStringFromURL:url];
-        
-        if(!http)
-        {
-            NSLog(@"Could not load news-data!");
-            NSLog(@"%@", http);
-        }
-        
+    self.loading.hidden = NO;
+    [MSUtility loadURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/news"] withCompletionHandler:^(NSString *http) {
+    
         
         [self.webView loadHTMLString:http baseURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/news"]];
         
         self.loading.hidden = YES;
-        
-        
-    });
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -164,7 +152,8 @@ static NSURLConnection *con;
 
     }
     
-    con = [[NSURLConnection alloc] initWithRequest:request delegate:[MSUtility sharedInstance]];
+    task = [[MSUtility sharedSession] dataTaskWithRequest:request];
+    [task resume];
 
     return YES;
 }
