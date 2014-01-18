@@ -116,18 +116,18 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" suppressesIncrementalRendering="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-0s-XkL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                            <webView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" suppressesIncrementalRendering="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-0s-XkL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-wO-etN">
-                                <rect key="frame" x="288" y="426" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-wO-etN">
+                                <rect key="frame" x="291" y="426" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.63137254899999995" green="0.058823529409999999" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LS3-mR-lt7">
+                            <button opaque="NO" alpha="0.74999999999999978" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LS3-mR-lt7">
                                 <rect key="frame" x="6" y="422" width="27" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="glyphicons_224_chevron-left.png">
@@ -140,6 +140,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Soj-0s-XkL" secondAttribute="bottom" constant="48" id="Cjl-Qp-9ec"/>
+                            <constraint firstItem="bN2-SA-yfS" firstAttribute="top" secondItem="LS3-mR-lt7" secondAttribute="bottom" constant="6" id="T1v-hN-5JC"/>
+                            <constraint firstItem="bN2-SA-yfS" firstAttribute="top" secondItem="XZk-wO-etN" secondAttribute="bottom" constant="9" id="cQk-yh-ARj"/>
+                            <constraint firstAttribute="trailing" secondItem="XZk-wO-etN" secondAttribute="trailing" constant="9" id="h5K-hC-Wul"/>
+                            <constraint firstItem="LS3-mR-lt7" firstAttribute="leading" secondItem="EJW-1b-Kak" secondAttribute="leading" constant="6" id="uKN-3Z-wXm"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Aktuell" image="glyphicons_020_home.png" id="IpO-w8-D8C"/>
                     <navigationItem key="navigationItem" title="Aktuell" id="WNZ-CS-7ot"/>
@@ -385,7 +392,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJj-tB-RGK">
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJj-tB-RGK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -397,6 +404,9 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dJj-tB-RGK" secondAttribute="bottom" constant="48" id="Yhg-0V-4io"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mensa" image="glyphicons_276_cutlery.png" id="3zi-ke-J0j"/>
                     <navigationItem key="navigationItem" title="Mensa" id="Ff6-Vb-U0j"/>
@@ -421,7 +431,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vt-Xa-bD6">
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vt-Xa-bD6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -434,6 +444,9 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1vt-Xa-bD6" secondAttribute="bottom" constant="48" id="O35-49-lyq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Kontakt" image="glyphicons_077_headset.png" id="hRV-M8-b0d"/>
                     <navigationItem key="navigationItem" title="Kontakt" id="IjP-qk-Pa7"/>
