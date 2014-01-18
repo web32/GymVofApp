@@ -10,6 +10,7 @@
 
 @implementation MSPush
 
+// Wird aufgerufen wenn Nachricht ankommt und die App aktiv ist
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     [UIApplication sharedApplication].applicationIconBadgeNumber = [[[userInfo objectForKey:@"aps"] objectForKey: @"badge"] intValue];
@@ -32,6 +33,7 @@
     
 }
 
+// Hier wird der Device Toekn audgegeben unter dem das Gerät errreichbar ist
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     
     NSLog(@"Device Token=%@", deviceToken);
@@ -53,14 +55,17 @@
     }];
 }
 
+// Wird aufgerufen wenn es einen Error gab
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     NSLog(@"Error bei der Registrierung");
 }
 
+// Wird aufgerufen wenn die App fertig geladen hat
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     
+    // Wird aufgerufen wenn eine Remote Nofication Amgekommen ist als das Gerät Inaktiv war
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]) {
         NSString* alert = [[[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey] objectForKey:@"aps"] objectForKey:@"alert"];
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Aktuell" message:alert delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
