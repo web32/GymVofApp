@@ -2601,16 +2601,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen",
+					"Gymnasium\\ Vilshofen",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gymnasium Vilshofen/Gymnasium Vilshofen-Prefix.pch";
 				INFOPLIST_FILE = "Gymnasium Vilshofen/Gymnasium Vilshofen-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen/Gymnasium\\ Vilshofen",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen/Gymnasium\\ Vilshofen/code/Localytics",
+					"Gymnasium\\ Vilshofen",
+					"Gymnasium\\ Vilshofen/code/Localytics",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2627,16 +2626,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen",
+					"Gymnasium\\ Vilshofen",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gymnasium Vilshofen/Gymnasium Vilshofen-Prefix.pch";
 				INFOPLIST_FILE = "Gymnasium Vilshofen/Gymnasium Vilshofen-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen/Gymnasium\\ Vilshofen",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen",
-					"/Users/maximiliansollner/msCloud/maxDev/GymVofApp/CodeBase/Gymnasium\\ Vilshofen/Gymnasium\\ Vilshofen/code/Localytics",
+					"Gymnasium\\ Vilshofen",
+					"Gymnasium\\ Vilshofen/code/Localytics",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
