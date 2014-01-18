@@ -48,6 +48,7 @@ static MSUtility *sharedInstance = nil;
     }
 }
 
+
 +(NSString*)httpStringFromURL:(NSURL *)url
 {
     //Erstelle eine Anfrage mit der übergebenen URL

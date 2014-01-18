@@ -11,10 +11,11 @@
 
 
 
-@interface MSUtility : NSObject <NSURLConnectionDelegate>
+@interface MSUtility : NSObject <NSURLSessionDelegate>
 
 +(MSUtility*)sharedInstance;
 
+//+(void)loadURL:(NSURL *)url withHandler:^((NSString *)response);
 +(NSString*)httpStringFromURL:(NSURL *)url;
 +(NSString *)cleanString:(NSString *)input;
 

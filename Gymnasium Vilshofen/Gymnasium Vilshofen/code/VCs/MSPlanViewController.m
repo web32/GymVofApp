@@ -133,36 +133,41 @@ static NSString *loginP = @"sj+*1314";
     
     response = [MSUtility cleanString:response];
     
-    NSData *toJson = [response dataUsingEncoding:NSUTF8StringEncoding];
-    
-    id json = [NSJSONSerialization
-               JSONObjectWithData: toJson
-               options:0
-               error:nil];
-    
-    NSLog(@"JSON: %@", json);
-    
-    if ([json isKindOfClass:[NSDictionary class]]) {
-        self.data = json;
-        self.cached = NO;
-        self.loaded = YES;
-        [[NSUserDefaults standardUserDefaults] setObject:json forKey:@"vPlan"];
-    } else {
-        //Kein oder falsche json-Datei bleibe bei Cache-Dateien
-        NSLog(@"Fehler beim vPlan-Donwload! Cache-Dateien: %s", self.cached ? "YES" : "NO");
-        self.loaded = YES;
-    }
-    
-    if (response.length == 0) {
-        self.iNet = NO;
-    }
-    else {
-        self.iNet = YES;
-    }
+    [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"]] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        id json = [NSJSONSerialization
+                   JSONObjectWithData: data
+                   options:0
+                   error:nil];
+        
+        NSLog(@"JSON: %@", json);
+        
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            self.data = json;
+            self.cached = NO;
+            self.loaded = YES;
+            [[NSUserDefaults standardUserDefaults] setObject:json forKey:@"vPlan"];
+        } else {
+            //Kein oder falsche json-Datei bleibe bei Cache-Dateien
+            NSLog(@"Fehler beim vPlan-Donwload! Cache-Dateien: %s", self.cached ? "YES" : "NO");
+            self.loaded = YES;
+        }
+        
+        if (data.length == 0) {
+            self.iNet = NO;
+        }
+        else {
+            self.iNet = YES;
+        }
+    }];
 }
 
 -(void)loadInfoData
 {
+    [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"]] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        
+    }];
     self.infoData = [MSUtility cleanString:
                             [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplaninfo"]]];
 }

@@ -1188,6 +1188,7 @@
 			children = (
 				3C317B9B18884AC60019A8B3 /* Cells */,
 				3C317BA618884AC60019A8B3 /* Localytics */,
+				3C317BB318884AC60019A8B3 /* VCs */,
 				3C317BAA18884AC60019A8B3 /* Main_iPad.storyboard */,
 				3C317BAB18884AC60019A8B3 /* Main_iPhone.storyboard */,
 				3C317BAD18884AC60019A8B3 /* MSAppDelegate.h */,
@@ -1196,7 +1197,6 @@
 				3C317BB018884AC60019A8B3 /* MSTabBarController.m */,
 				3C317BB118884AC60019A8B3 /* MSUtility.h */,
 				3C317BB218884AC60019A8B3 /* MSUtility.m */,
-				3C317BB318884AC60019A8B3 /* VCs */,
 			);
 			path = code;
 			sourceTree = "<group>";
