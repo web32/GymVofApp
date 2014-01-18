@@ -566,7 +566,6 @@
 		3C8BB3CC18564BD200EECE97 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3CB18564BD200EECE97 /* AVFoundation.framework */; };
 		3C8BB3CE18564BD800EECE97 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3CD18564BD800EECE97 /* CoreMedia.framework */; };
 		3C8BB3D418564BF300EECE97 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8BB3D318564BF300EECE97 /* SystemConfiguration.framework */; };
-		4C7B167B1889D2D90024B2A0 /* MSPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B167A1889D2D90024B2A0 /* MSPush.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1151,8 +1150,6 @@
 		3C8BB3CF18564BDB00EECE97 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		3C8BB3D118564BE600EECE97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3C8BB3D318564BF300EECE97 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		4C7B16791889D2D90024B2A0 /* MSPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPush.h; sourceTree = "<group>"; };
-		4C7B167A1889D2D90024B2A0 /* MSPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPush.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1200,8 +1197,6 @@
 				3C317BB118884AC60019A8B3 /* MSUtility.h */,
 				3C317BB218884AC60019A8B3 /* MSUtility.m */,
 				3C317BB318884AC60019A8B3 /* VCs */,
-				4C7B16791889D2D90024B2A0 /* MSPush.h */,
-				4C7B167A1889D2D90024B2A0 /* MSPush.m */,
 			);
 			path = code;
 			sourceTree = "<group>";
@@ -2488,7 +2483,6 @@
 				3C317DE618884AC80019A8B3 /* MSUtility.m in Sources */,
 				3C317DEC18884AC80019A8B3 /* MSStundeplanController.m in Sources */,
 				3C317DE818884AC80019A8B3 /* MSKontaktViewController.m in Sources */,
-				4C7B167B1889D2D90024B2A0 /* MSPush.m in Sources */,
 				3C317DDD18884AC80019A8B3 /* MSNewsCell.m in Sources */,
 				3C317DE418884AC80019A8B3 /* MSAppDelegate.m in Sources */,
 				3C317DE718884AC80019A8B3 /* MSEinstellungsViewController.m in Sources */,

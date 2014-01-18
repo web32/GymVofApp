@@ -14,9 +14,8 @@
 {
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:
                                                                 UIApplicationBackgroundFetchIntervalMinimum];
-
-    self.pushManager = [[MSPush alloc] init];
     
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     
     //Farbe der Navigation-Bar auf rot ändern
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(205.0/255) green:(42.0/255) blue:(42.0/255) alpha:1]];
@@ -163,5 +162,59 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
         [[UIApplication sharedApplication] presentLocalNotificationNow:localNotif];
     }
 }
+
+
+#pragma mark RemoteNotification
+
+// Wird aufgerufen wenn Nachricht ankommt und die App aktiv ist
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = [[[userInfo objectForKey:@"aps"] objectForKey: @"badge"] intValue];
+    NSString* alert = [[userInfo objectForKey:@"aps"] objectForKey: @"alert"];
+    NSString* alerttitle = [[userInfo objectForKey:@"aps"] objectForKey: @"alerttitle"];
+    NSString* code = [[userInfo objectForKey:@"aps"] objectForKey: @"code"];
+    
+    if ([code isEqual: @"testcode"]){
+        //stuff
+    }
+    
+    NSLog(@"remote notification: %@",[userInfo description]);
+    NSLog(@"Nachricht: %@", alert);
+    
+    UIApplicationState state = [[UIApplication sharedApplication] applicationState];
+    if (state == UIApplicationStateActive) {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:alerttitle message:alert delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+}
+
+// Hier wird der Device Token audgegeben unter dem das Gerät errreichbar ist
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    NSLog(@"Device Token=%@", deviceToken);
+    
+    NSString* token = [NSString stringWithFormat:@"%@", deviceToken];
+    
+    token= [token substringWithRange:NSMakeRange(1, token.length - 2)];
+    
+    token = [token stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString* url = [NSString stringWithFormat:@"http://michaelmayer.cwsurf.de/MYSQL/addDeviceToken.php?deviceToken=%@", token];
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"Error");
+        }
+    }];
+}
+
+// Wird aufgerufen wenn es einen Error gab
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"Fehler bei der Registrierung: %@", error);
+}
+
 
 @end
