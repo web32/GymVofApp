@@ -9,7 +9,6 @@
 #import "MSUtility.h"
 
 
-
 @implementation NSString (NSAddition)
 -(NSString*)stringBetweenString:(NSString*)start andString:(NSString*)end {
     NSScanner* scanner = [NSScanner scannerWithString:self];
@@ -28,6 +27,7 @@
 @implementation MSUtility
 
 static MSUtility *sharedInstance = nil;
+static NSURLSession *cachedSession = nil;
 
 +(MSUtility *) sharedInstance {
     if (!sharedInstance) {
@@ -46,6 +46,32 @@ static MSUtility *sharedInstance = nil;
     } else {
         [[challenge sender] cancelAuthenticationChallenge:challenge];
     }
+}
+
++(void)loadURL:(NSURL *)url withCompletionHandler:(void (^)(NSString *response))completionHandler
+{
+    if(!cachedSession) {
+        cachedSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:[MSUtility sharedInstance] delegateQueue:nil];
+    }
+    
+    [[cachedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        //Konvertiere die Bytes zuerst als UTF8
+        NSString *stringResponse = [MSUtility cleanString:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
+        
+        //Wenn die Konvertierung mit UTF8 fehlschlägt, gehen wir von ISO-Latin-1 aus
+        if (stringResponse.length == 0) {
+            stringResponse = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+        }
+        
+        if(error)
+        {
+            //Sollte ein Fehler bestehen wir er in der Konsole ausgegeben
+            NSLog(@"Fehler beim Download: %@", error);
+        }
+        
+        //Completion-Handler ausführen
+        completionHandler(stringResponse);
+    }] resume];
 }
 
 

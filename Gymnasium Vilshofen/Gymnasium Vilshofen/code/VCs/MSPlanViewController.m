@@ -22,7 +22,7 @@ static NSString *loginP = @"sj+*1314";
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -40,8 +40,7 @@ static NSString *loginP = @"sj+*1314";
         self.day = [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/tag"]];
     });
         
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+    
 }
 
 
@@ -74,9 +73,15 @@ static NSString *loginP = @"sj+*1314";
         }
         [self loadData];
         [self loadInfoData];
-        [self.tableView reloadData];
-        [self performSelector:@selector(endRefreshing) withObject:self.refreshControl afterDelay:1];
+        
     });
+}
+
+-(void)finishedLoading
+{
+    NSLog(@"Finished loading");
+    [self.tableView reloadData];
+    [self performSelector:@selector(endRefreshing) withObject:self.refreshControl afterDelay:1];
 }
 
 -(void)endRefreshing
@@ -129,11 +134,8 @@ static NSString *loginP = @"sj+*1314";
 
 -(void)loadData
 {
-    NSString *response = [MSUtility httpStringFromURL: [NSURL URLWithString:[NSString stringWithFormat:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"]]];
-    
-    response = [MSUtility cleanString:response];
-    
-    [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"]] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [MSUtility loadURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"] withCompletionHandler:^(NSString *response) {
+        NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
         
         id json = [NSJSONSerialization
                    JSONObjectWithData: data
@@ -153,23 +155,23 @@ static NSString *loginP = @"sj+*1314";
             self.loaded = YES;
         }
         
-        if (data.length == 0) {
+        if (response.length == 0) {
             self.iNet = NO;
         }
         else {
             self.iNet = YES;
         }
+        
+        [self finishedLoading];
     }];
 }
 
 -(void)loadInfoData
 {
-    [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"]] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        
+    [MSUtility loadURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplaninfo"] withCompletionHandler:^(NSString *response) {
+        self.infoData = response;
+        [self finishedLoading];
     }];
-    self.infoData = [MSUtility cleanString:
-                            [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplaninfo"]]];
 }
 
 

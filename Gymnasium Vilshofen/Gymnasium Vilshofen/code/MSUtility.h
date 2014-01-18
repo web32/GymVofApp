@@ -15,7 +15,7 @@
 
 +(MSUtility*)sharedInstance;
 
-//+(void)loadURL:(NSURL *)url withHandler:^((NSString *)response);
++(void)loadURL:(NSURL *)url withCompletionHandler:(void (^)(NSString *response))completionHandler;
 +(NSString*)httpStringFromURL:(NSURL *)url;
 +(NSString *)cleanString:(NSString *)input;
 
