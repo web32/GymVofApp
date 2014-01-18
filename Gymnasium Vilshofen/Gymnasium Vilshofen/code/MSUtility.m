@@ -68,7 +68,7 @@ static MSUtility *sharedInstance = nil;
     if(error)
     {
         //Sollte ein Fehler bestehen wir er in der Konsole ausgegeben
-        NSLog(@"Fehler beim download: %@", error);
+        NSLog(@"Fehler beim Download: %@", error);
     }
     
     //Konvertiere die Bytes zuerst als UTF8
