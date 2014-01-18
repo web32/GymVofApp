@@ -21,7 +21,11 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
 	<string>1</string>
+=======
+	<string>1019</string>
+>>>>>>> development-issue-2
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIBackgroundModes</key>
