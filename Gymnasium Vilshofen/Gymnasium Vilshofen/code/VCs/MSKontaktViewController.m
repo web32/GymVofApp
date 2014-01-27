@@ -31,22 +31,11 @@
     [self.loading startAnimating];
     self.loading.hidden = NO;
     
-	
-    //Load the contact-webpage
-    dispatch_async(dispatch_get_main_queue(), ^() {
-        NSURL *url = [NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/kontakt"];
-        NSString *http = [MSUtility httpStringFromURL:url];
-        
-        if(!http)
-        {
-            NSLog(@"Could not load contact-data!");
-            NSLog(@"%@", http);
-        }
-        
+    [MSUtility loadURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/kontakt"] withCompletionHandler:^(NSString *http) {
         self.webView.delegate = self;
         [self.webView loadHTMLString:http baseURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/kontakt"]];
         self.loading.hidden = YES;
-    });
+    }];
 }
 
 -(void)viewDidAppear:(BOOL)animated
