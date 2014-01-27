@@ -38,21 +38,12 @@
 
 -(void)loadMensa
 {
-    //Load the Mensa-webpage
-    dispatch_async(dispatch_get_main_queue(), ^() {
-        self.loading.hidden = NO;
-        NSURL *url = [NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/mensa"];
-        NSString *http = [MSUtility httpStringFromURL:url];
-        
-        if(!http)
-        {
-            NSLog(@"Could not load Mensa-data!");
-        }
-        
+    self.loading.hidden = NO;
+    [MSUtility loadURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/mensa"] withCompletionHandler:^(NSString *http) {
         self.webView.delegate = self;
         [self.webView loadHTMLString:http baseURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/mensa"]];
         self.loading.hidden = YES;
-    });
+    }];
 }
 
 - (void)didReceiveMemoryWarning
