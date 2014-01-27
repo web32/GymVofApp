@@ -36,9 +36,6 @@ static NSString *loginP = @"sj+*1314";
     dispatch_async(dispatch_get_main_queue(), ^() {
         self.day = [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/tag"]];
     });
-        
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
 }
 
 
@@ -48,9 +45,13 @@ static NSString *loginP = @"sj+*1314";
     self.loggedIn = NO;
     self.cached = NO;
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+    
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, self.tabBarController.tabBar.frame.size.height)];
     footer.backgroundColor = [UIColor clearColor];
     self.tableView.tableFooterView = footer;
+    
     
     [self reload];
 }
