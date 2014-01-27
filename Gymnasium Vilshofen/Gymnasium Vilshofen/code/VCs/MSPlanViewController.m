@@ -32,9 +32,6 @@ static NSString *loginP = @"sj+*1314";
     self.data = [NSDictionary dictionary];
     self.day = @"";
     
-    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, self.tabBarController.tabBar.frame.size.height)];
-    footer.backgroundColor = [UIColor clearColor];
-    self.tableView.tableFooterView = footer;
     
     dispatch_async(dispatch_get_main_queue(), ^() {
         self.day = [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/tag"]];
@@ -50,6 +47,11 @@ static NSString *loginP = @"sj+*1314";
     [[LocalyticsSession shared] tagScreen:@"Vertretungsplan"];
     self.loggedIn = NO;
     self.cached = NO;
+    
+    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, self.tabBarController.tabBar.frame.size.height)];
+    footer.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = footer;
+    
     [self reload];
 }
 
@@ -140,7 +142,7 @@ static NSString *loginP = @"sj+*1314";
                options:0
                error:nil];
     
-    NSLog(@"JSON: %@", json);
+    NSLog(@"Recieved JSON: %lu", sizeof(json));
     
     if ([json isKindOfClass:[NSDictionary class]]) {
         self.data = json;
@@ -315,8 +317,6 @@ static NSString *loginP = @"sj+*1314";
     if (indexPath.section == 3) {
         if (newsCell) {
              CGSize expected = [newsCell.textLabel sizeThatFits:CGSizeMake(newsCell.textLabel.bounds.size.width, CGFLOAT_MAX)];
-            
-            NSLog(@"Row: %f", expected.height);
             
              return expected.height + 20;
         }
