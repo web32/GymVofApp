@@ -9,7 +9,6 @@
 #import "MSUtility.h"
 
 
-
 @implementation NSString (NSAddition)
 -(NSString*)stringBetweenString:(NSString*)start andString:(NSString*)end {
     NSScanner* scanner = [NSScanner scannerWithString:self];
@@ -27,13 +26,21 @@
 
 @implementation MSUtility
 
-static MSUtility *sharedInstance = nil;
+static MSUtility *sharedInstance;
+static NSURLSession *sharedSession;
 
 +(MSUtility *) sharedInstance {
     if (!sharedInstance) {
         sharedInstance = [[MSUtility alloc] init];
     }
     return sharedInstance;
+}
+
++(NSURLSession *) sharedSession {
+    if (!sharedSession) {
+        sharedSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:[MSUtility sharedInstance] delegateQueue:nil];
+    }
+    return sharedSession;
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
@@ -47,6 +54,42 @@ static MSUtility *sharedInstance = nil;
         [[challenge sender] cancelAuthenticationChallenge:challenge];
     }
 }
+
+-(void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
+{
+    if ([challenge previousFailureCount] == 0) {
+        [[challenge sender] useCredential:
+         [NSURLCredential credentialWithUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"u"]
+                                    password:[[NSUserDefaults standardUserDefaults] objectForKey:@"p"]
+                                 persistence:NSURLCredentialPersistencePermanent] forAuthenticationChallenge:challenge];
+    } else {
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+    }
+    
+}
+
++(void)loadURL:(NSURL *)url withCompletionHandler:(void (^)(NSString *response))completionHandler
+{
+    [[[MSUtility sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        //Konvertiere die Bytes zuerst als UTF8
+        NSString *stringResponse = [MSUtility cleanString:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
+        
+        //Wenn die Konvertierung mit UTF8 fehlschlägt, gehen wir von ISO-Latin-1 aus
+        if (stringResponse.length == 0) {
+            stringResponse = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+        }
+        
+        if(error)
+        {
+            //Sollte ein Fehler bestehen wir er in der Konsole ausgegeben
+            NSLog(@"Fehler beim Download: %@", error);
+        }
+        
+        //Completion-Handler ausführen
+        completionHandler(stringResponse);
+    }] resume];
+}
+
 
 +(NSString*)httpStringFromURL:(NSURL *)url
 {

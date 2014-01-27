@@ -22,7 +22,7 @@ static NSString *loginP = @"sj+*1314";
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -36,6 +36,7 @@ static NSString *loginP = @"sj+*1314";
     dispatch_async(dispatch_get_main_queue(), ^() {
         self.day = [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/tag"]];
     });
+
 }
 
 
@@ -77,9 +78,15 @@ static NSString *loginP = @"sj+*1314";
         }
         [self loadData];
         [self loadInfoData];
-        [self.tableView reloadData];
-        [self performSelector:@selector(endRefreshing) withObject:self.refreshControl afterDelay:1];
+        
     });
+}
+
+-(void)finishedLoading
+{
+    NSLog(@"Finished loading");
+    [self.tableView reloadData];
+    [self performSelector:@selector(endRefreshing) withObject:self.refreshControl afterDelay:1];
 }
 
 -(void)endRefreshing
@@ -132,42 +139,44 @@ static NSString *loginP = @"sj+*1314";
 
 -(void)loadData
 {
-    NSString *response = [MSUtility httpStringFromURL: [NSURL URLWithString:[NSString stringWithFormat:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"]]];
-    
-    response = [MSUtility cleanString:response];
-    
-    NSData *toJson = [response dataUsingEncoding:NSUTF8StringEncoding];
-    
-    id json = [NSJSONSerialization
-               JSONObjectWithData: toJson
-               options:0
-               error:nil];
-    
-    NSLog(@"Recieved JSON: %lu", sizeof(json));
-    
-    if ([json isKindOfClass:[NSDictionary class]]) {
-        self.data = json;
-        self.cached = NO;
-        self.loaded = YES;
-        [[NSUserDefaults standardUserDefaults] setObject:json forKey:@"vPlan"];
-    } else {
-        //Kein oder falsche json-Datei bleibe bei Cache-Dateien
-        NSLog(@"Fehler beim vPlan-Donwload! Cache-Dateien: %s", self.cached ? "YES" : "NO");
-        self.loaded = YES;
-    }
-    
-    if (response.length == 0) {
-        self.iNet = NO;
-    }
-    else {
-        self.iNet = YES;
-    }
+    [MSUtility loadURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplan"] withCompletionHandler:^(NSString *response) {
+        NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
+        
+        id json = [NSJSONSerialization
+                   JSONObjectWithData: data
+                   options:0
+                   error:nil];
+        
+        NSLog(@"JSON: %@", json);
+        
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            self.data = json;
+            self.cached = NO;
+            self.loaded = YES;
+            [[NSUserDefaults standardUserDefaults] setObject:json forKey:@"vPlan"];
+        } else {
+            //Kein oder falsche json-Datei bleibe bei Cache-Dateien
+            NSLog(@"Fehler beim vPlan-Donwload! Cache-Dateien: %s", self.cached ? "YES" : "NO");
+            self.loaded = YES;
+        }
+        
+        if (response.length == 0) {
+            self.iNet = NO;
+        }
+        else {
+            self.iNet = YES;
+        }
+        
+        [self finishedLoading];
+    }];
 }
 
 -(void)loadInfoData
 {
-    self.infoData = [MSUtility cleanString:
-                            [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplaninfo"]]];
+    [MSUtility loadURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/vplaninfo"] withCompletionHandler:^(NSString *response) {
+        self.infoData = response;
+        [self finishedLoading];
+    }];
 }
 
 
