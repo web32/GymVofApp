@@ -270,10 +270,16 @@ static NSString *loginP = @"sj+*1314";
         MSInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         if (self.iNet) {
-            if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"klasse"] isEqualToString:@""]
-                || [[NSUserDefaults standardUserDefaults] stringForKey:@"klasse"] == NULL) {
-                cell.info.text = @"Bitte wähle eine Klasse in den Einstellungen";
-            } else {
+            if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"klasse"] isEqualToString:@""])
+            {
+                    cell.info.text = @"Bitte wähle eine Klasse in den Einstellungen";
+            }
+            else if ([MSUtility teacherMode] && [[[NSUserDefaults standardUserDefaults] stringForKey:@"lehrer"] isEqualToString:@""])
+            {
+                cell.info.text = @"Bitte wählen Sie einen Lehrer in den Einstellungen";               
+            }
+            else
+            {
                 cell.info.text = @"Heute normaler Unterricht nach Stundenplan";
             }
         }

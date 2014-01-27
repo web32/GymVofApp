@@ -68,6 +68,16 @@ static NSURLSession *sharedSession;
     
 }
 
++(bool)teacherMode
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"teacherMode"];
+}
+
++(void)setTeacherMode:(bool)mode
+{
+    [[NSUserDefaults standardUserDefaults] setBool:mode forKey:@"teacherMode"];
+}
+
 +(void)loadURL:(NSURL *)url withCompletionHandler:(void (^)(NSString *response))completionHandler
 {
     [[[MSUtility sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

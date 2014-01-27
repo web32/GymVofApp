@@ -10,11 +10,14 @@
 
 #import "LocalyticsSession.h"
 
+#import "MSUtility.h"
+
 @interface MSEinstellungsViewController : UIViewController
 
-@property IBOutlet UISwitch *background;
-@property IBOutlet UITextField *klasse;
+@property IBOutlet UISwitch *background, *lehrerModus;
+@property IBOutlet UITextField *klasse, *lehrer;
 
 -(IBAction)backgroundSchalten:(id)sender;
+-(IBAction)lehrerSchalten:(id)sender;
 
 @end

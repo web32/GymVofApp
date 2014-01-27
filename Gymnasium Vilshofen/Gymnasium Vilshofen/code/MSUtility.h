@@ -16,6 +16,9 @@
 +(MSUtility*)sharedInstance;
 +(NSURLSession *)sharedSession;
 
++(bool)teacherMode;
++(void)setTeacherMode:(bool)mode;
+
 +(void)loadURL:(NSURL *)url withCompletionHandler:(void (^)(NSString *response))completionHandler;
 +(NSString*)httpStringFromURL:(NSURL *)url;
 +(NSString *)cleanString:(NSString *)input;
