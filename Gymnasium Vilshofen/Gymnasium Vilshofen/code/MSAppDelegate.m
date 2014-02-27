@@ -165,7 +165,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
         NSLog(@"%@", name);
         NSString* URLname = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSLog(@"%@", URLname);
-        NSString* url = [NSString stringWithFormat:@"http://www.4mayerhofers.de/Push/addDeviceToken.php?deviceToken=%@&name=%@", Token, URLname];
+        NSString* url = [NSString stringWithFormat:@"http://www.4mayerhofers.de/Push-GymVof/addDeviceToken.php?deviceToken=%@&name=%@", Token, URLname];
         
         NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         
