@@ -16,7 +16,6 @@
 
 
 -(void)keyBoardWillShow:(NSNotification *)notification;
-
 -(void)keyBoardWillHide:(NSNotification *)notification;
 
 @end

@@ -65,7 +65,6 @@ static NSURLConnection *con;
     dispatch_async(dispatch_get_main_queue(), ^() {
         self.loading.hidden = NO;
         
-        
         NSURL *url = [NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/news"];
         NSString *http = [MSUtility httpStringFromURL:url];
         
@@ -74,13 +73,9 @@ static NSURLConnection *con;
             NSLog(@"Could not load news-data!");
             NSLog(@"%@", http);
         }
-        
-        
         [self.webView loadHTMLString:http baseURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/news"]];
         
         self.loading.hidden = YES;
-        
-        
     });
 }
 
@@ -115,8 +110,6 @@ static NSURLConnection *con;
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-    
-    
         NSString *username = [alertView textFieldAtIndex:0].text;
         NSString *password = [alertView textFieldAtIndex:1].text;
         
@@ -151,32 +144,18 @@ static NSURLConnection *con;
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSLog(@"Should load %@", request.URL.host);
     
-    
     if ([request.URL.host isEqualToString:@"eltern.gym-vilshofen.de"]) {
-        
-        
         webView.scalesPageToFit = YES;
-        
-        
         self.backButton.hidden = NO;
         
     } else {
         webView.scalesPageToFit = NO;
         self.backButton.hidden = YES;
-
-
     }
     
     con = [[NSURLConnection alloc] initWithRequest:request delegate:[MSUtility sharedInstance]];
     
-    
-    
     return YES;
-    
-    
-    
-    
-    
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView

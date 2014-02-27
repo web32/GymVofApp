@@ -39,9 +39,6 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [[LocalyticsSession shared] tagScreen:@"Einstellungen"];
-    
-        
-    
 }
 
 

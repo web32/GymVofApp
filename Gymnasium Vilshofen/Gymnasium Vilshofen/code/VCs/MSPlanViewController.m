@@ -173,7 +173,6 @@ static NSString *loginP = @"sj+*1314";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-
 }
 
 -(NSDictionary *)cachedData {
@@ -285,8 +284,6 @@ static NSString *loginP = @"sj+*1314";
         MSLinkCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         return cell;
-        
-        
     } else if (indexPath.section == 3) {
         static NSString *CellIdentifier = @"NewsCell";
         MSNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];

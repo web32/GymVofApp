@@ -23,10 +23,7 @@
 {
     [super viewDidLoad];
     [self.loading startAnimating];
-    
-    
-	
-    
+
 }
 
 -(void)viewDidAppear:(BOOL)animated

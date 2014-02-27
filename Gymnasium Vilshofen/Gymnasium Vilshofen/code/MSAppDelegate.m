@@ -15,8 +15,6 @@
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:
                                                                 UIApplicationBackgroundFetchIntervalMinimum];
 
-    
-    
     //Farbe der Navigation-Bar auf rot ändern
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(205.0/255) green:(42.0/255) blue:(42.0/255) alpha:1]];
     
@@ -117,7 +115,8 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
         NSArray *klasseAlt = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:@"vPlan"]
                                 objectForKey: [[NSUserDefaults standardUserDefaults] objectForKey:@"klasse"]];
         
-        if (![klasseNeu isEqualToArray: klasseAlt] && klasseAlt != nil) {
+        if (![klasseNeu isEqualToArray: klasseAlt] && klasseAlt != nil || true) {
+            //Meldung IMMER aktiv!
             
             
             NSString *message = @"Es gibt Änderungen am Vertretungsplan";

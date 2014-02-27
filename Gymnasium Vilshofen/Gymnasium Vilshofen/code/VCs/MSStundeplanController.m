@@ -14,7 +14,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-
     dispatch_async(dispatch_get_main_queue(), ^() {
         self.navigationItem.title = [NSString  stringWithFormat:@"Stundenplan %@", [MSUtility httpStringFromURL:[NSURL URLWithString:@"http://gymvof.api.maximilian-soellner.de/api/r1/tag"]]];
         NSLog(@"%@", self.navigationItem.title);
@@ -46,7 +45,6 @@
         }
     }
     return maxStunde;
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,13 +73,7 @@
         }
     }
 
-    
-    
-    
-
-    
-    return cell;
-    
+    return cell;    
 }
 
 @end

@@ -37,14 +37,12 @@ static MSUtility *sharedInstance = nil;
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-    NSLog(@"got auth challange");
-    
+{    
     if ([challenge previousFailureCount] == 0) {
         [[challenge sender] useCredential:
          [NSURLCredential credentialWithUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"u"]
                                     password:[[NSUserDefaults standardUserDefaults] objectForKey:@"p"]
-                                 persistence:NSURLCredentialPersistencePermanent] forAuthenticationChallenge:challenge];
+                                    persistence:NSURLCredentialPersistencePermanent] forAuthenticationChallenge:challenge];
     } else {
         [[challenge sender] cancelAuthenticationChallenge:challenge];
     }
@@ -54,9 +52,9 @@ static MSUtility *sharedInstance = nil;
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Netzwerk-Fehler"
                                                     message:@"Die Datei konnte nicht geladen werden!"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+                                                    delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
     [alert show];
     
 }
