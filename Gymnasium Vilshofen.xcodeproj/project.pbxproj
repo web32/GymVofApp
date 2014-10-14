@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CA9EAFB19ED5595005C7761 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9EAFA19ED5595005C7761 /* SettingViewController.swift */; };
+		4CA9EAFE19ED5691005C7761 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9EAFD19ED5691005C7761 /* NewsCell.swift */; };
+		4CA9EB0019ED56AA005C7761 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9EAFF19ED56AA005C7761 /* InfoCell.swift */; };
+		4CA9EB0219ED56C9005C7761 /* PlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9EB0119ED56C9005C7761 /* PlanCell.swift */; };
+		4CA9EB0419ED56E0005C7761 /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9EB0319ED56E0005C7761 /* TimeTableCell.swift */; };
+		4CA9EB0619ED5700005C7761 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9EB0519ED5700005C7761 /* MenuCell.swift */; };
 		A0CF735D19EC5BBA004B7D66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF735C19EC5BBA004B7D66 /* AppDelegate.swift */; };
-		A0CF735F19EC5BBA004B7D66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF735E19EC5BBA004B7D66 /* ViewController.swift */; };
 		A0CF736219EC5BBA004B7D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CF736019EC5BBA004B7D66 /* Main.storyboard */; };
 		A0CF736419EC5BBA004B7D66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CF736319EC5BBA004B7D66 /* Images.xcassets */; };
 		A0CF736719EC5BBA004B7D66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0CF736519EC5BBA004B7D66 /* LaunchScreen.xib */; };
@@ -26,10 +31,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CA9EAFA19ED5595005C7761 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4CA9EAFD19ED5691005C7761 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		4CA9EAFF19ED56AA005C7761 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		4CA9EB0119ED56C9005C7761 /* PlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCell.swift; sourceTree = "<group>"; };
+		4CA9EB0319ED56E0005C7761 /* TimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
+		4CA9EB0519ED5700005C7761 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		A0CF735719EC5BBA004B7D66 /* Gymnasium Vilshofen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gymnasium Vilshofen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CF735B19EC5BBA004B7D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0CF735C19EC5BBA004B7D66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0CF735E19EC5BBA004B7D66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0CF736119EC5BBA004B7D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0CF736319EC5BBA004B7D66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0CF736619EC5BBA004B7D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -56,6 +66,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CA9EAF919ED5553005C7761 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				4CA9EAFA19ED5595005C7761 /* SettingViewController.swift */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		4CA9EAFC19ED55F0005C7761 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4CA9EAFD19ED5691005C7761 /* NewsCell.swift */,
+				4CA9EAFF19ED56AA005C7761 /* InfoCell.swift */,
+				4CA9EB0119ED56C9005C7761 /* PlanCell.swift */,
+				4CA9EB0319ED56E0005C7761 /* TimeTableCell.swift */,
+				4CA9EB0519ED5700005C7761 /* MenuCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		A0CF734E19EC5BBA004B7D66 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +107,9 @@
 		A0CF735919EC5BBA004B7D66 /* Gymnasium Vilshofen */ = {
 			isa = PBXGroup;
 			children = (
+				4CA9EAFC19ED55F0005C7761 /* Cells */,
+				4CA9EAF919ED5553005C7761 /* VCs */,
 				A0CF735C19EC5BBA004B7D66 /* AppDelegate.swift */,
-				A0CF735E19EC5BBA004B7D66 /* ViewController.swift */,
 				A0CF736019EC5BBA004B7D66 /* Main.storyboard */,
 				A0CF736319EC5BBA004B7D66 /* Images.xcassets */,
 				A0CF736519EC5BBA004B7D66 /* LaunchScreen.xib */,
@@ -212,8 +243,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CF735F19EC5BBA004B7D66 /* ViewController.swift in Sources */,
+				4CA9EB0619ED5700005C7761 /* MenuCell.swift in Sources */,
+				4CA9EB0219ED56C9005C7761 /* PlanCell.swift in Sources */,
 				A0CF735D19EC5BBA004B7D66 /* AppDelegate.swift in Sources */,
+				4CA9EB0019ED56AA005C7761 /* InfoCell.swift in Sources */,
+				4CA9EAFE19ED5691005C7761 /* NewsCell.swift in Sources */,
+				4CA9EAFB19ED5595005C7761 /* SettingViewController.swift in Sources */,
+				4CA9EB0419ED56E0005C7761 /* TimeTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +443,7 @@
 				A0CF737819EC5BBA004B7D66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0CF737919EC5BBA004B7D66 /* Build configuration list for PBXNativeTarget "Gymnasium VilshofenTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +452,7 @@
 				A0CF737B19EC5BBA004B7D66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
