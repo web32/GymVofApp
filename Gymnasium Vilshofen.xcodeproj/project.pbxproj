@@ -17,18 +17,7 @@
 		A0CF736219EC5BBA004B7D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CF736019EC5BBA004B7D66 /* Main.storyboard */; };
 		A0CF736419EC5BBA004B7D66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CF736319EC5BBA004B7D66 /* Images.xcassets */; };
 		A0CF736719EC5BBA004B7D66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0CF736519EC5BBA004B7D66 /* LaunchScreen.xib */; };
-		A0CF737319EC5BBA004B7D66 /* Gymnasium_VilshofenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF737219EC5BBA004B7D66 /* Gymnasium_VilshofenTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A0CF736D19EC5BBA004B7D66 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0CF734F19EC5BBA004B7D66 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0CF735619EC5BBA004B7D66;
-			remoteInfo = "Gymnasium Vilshofen";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4CA9EAFA19ED5595005C7761 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -43,20 +32,10 @@
 		A0CF736119EC5BBA004B7D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0CF736319EC5BBA004B7D66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0CF736619EC5BBA004B7D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		A0CF736C19EC5BBA004B7D66 /* Gymnasium VilshofenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gymnasium VilshofenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0CF737119EC5BBA004B7D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0CF737219EC5BBA004B7D66 /* Gymnasium_VilshofenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gymnasium_VilshofenTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A0CF735419EC5BBA004B7D66 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0CF736919EC5BBA004B7D66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,12 +65,30 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		4CD369AA19EEB59B00897C60 /* code */ = {
+			isa = PBXGroup;
+			children = (
+				4CA9EAFC19ED55F0005C7761 /* Cells */,
+				4CA9EAF919ED5553005C7761 /* VCs */,
+				A0CF735C19EC5BBA004B7D66 /* AppDelegate.swift */,
+			);
+			name = code;
+			sourceTree = "<group>";
+		};
+		4CD369AB19EEB5AD00897C60 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				A0CF736019EC5BBA004B7D66 /* Main.storyboard */,
+				A0CF736319EC5BBA004B7D66 /* Images.xcassets */,
+				A0CF736519EC5BBA004B7D66 /* LaunchScreen.xib */,
+			);
+			name = screens;
+			sourceTree = "<group>";
+		};
 		A0CF734E19EC5BBA004B7D66 = {
 			isa = PBXGroup;
 			children = (
 				A0CF735919EC5BBA004B7D66 /* Gymnasium Vilshofen */,
-				A0CF736F19EC5BBA004B7D66 /* Gymnasium VilshofenTests */,
-				A0CF735819EC5BBA004B7D66 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,20 +96,17 @@
 			isa = PBXGroup;
 			children = (
 				A0CF735719EC5BBA004B7D66 /* Gymnasium Vilshofen.app */,
-				A0CF736C19EC5BBA004B7D66 /* Gymnasium VilshofenTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A0CF735919EC5BBA004B7D66 /* Gymnasium Vilshofen */ = {
 			isa = PBXGroup;
 			children = (
-				4CA9EAFC19ED55F0005C7761 /* Cells */,
-				4CA9EAF919ED5553005C7761 /* VCs */,
-				A0CF735C19EC5BBA004B7D66 /* AppDelegate.swift */,
-				A0CF736019EC5BBA004B7D66 /* Main.storyboard */,
-				A0CF736319EC5BBA004B7D66 /* Images.xcassets */,
-				A0CF736519EC5BBA004B7D66 /* LaunchScreen.xib */,
+				4CD369AB19EEB5AD00897C60 /* screens */,
+				4CD369AA19EEB59B00897C60 /* code */,
+				A0CF735819EC5BBA004B7D66 /* Products */,
 				A0CF735A19EC5BBA004B7D66 /* Supporting Files */,
 			);
 			path = "Gymnasium Vilshofen";
@@ -122,23 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				A0CF735B19EC5BBA004B7D66 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A0CF736F19EC5BBA004B7D66 /* Gymnasium VilshofenTests */ = {
-			isa = PBXGroup;
-			children = (
-				A0CF737219EC5BBA004B7D66 /* Gymnasium_VilshofenTests.swift */,
-				A0CF737019EC5BBA004B7D66 /* Supporting Files */,
-			);
-			path = "Gymnasium VilshofenTests";
-			sourceTree = "<group>";
-		};
-		A0CF737019EC5BBA004B7D66 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A0CF737119EC5BBA004B7D66 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,24 +140,6 @@
 			productReference = A0CF735719EC5BBA004B7D66 /* Gymnasium Vilshofen.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A0CF736B19EC5BBA004B7D66 /* Gymnasium VilshofenTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0CF737919EC5BBA004B7D66 /* Build configuration list for PBXNativeTarget "Gymnasium VilshofenTests" */;
-			buildPhases = (
-				A0CF736819EC5BBA004B7D66 /* Sources */,
-				A0CF736919EC5BBA004B7D66 /* Frameworks */,
-				A0CF736A19EC5BBA004B7D66 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A0CF736E19EC5BBA004B7D66 /* PBXTargetDependency */,
-			);
-			name = "Gymnasium VilshofenTests";
-			productName = "Gymnasium VilshofenTests";
-			productReference = A0CF736C19EC5BBA004B7D66 /* Gymnasium VilshofenTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -192,10 +151,6 @@
 				TargetAttributes = {
 					A0CF735619EC5BBA004B7D66 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					A0CF736B19EC5BBA004B7D66 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = A0CF735619EC5BBA004B7D66;
 					};
 				};
 			};
@@ -213,7 +168,6 @@
 			projectRoot = "";
 			targets = (
 				A0CF735619EC5BBA004B7D66 /* Gymnasium Vilshofen */,
-				A0CF736B19EC5BBA004B7D66 /* Gymnasium VilshofenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -226,13 +180,6 @@
 				A0CF736219EC5BBA004B7D66 /* Main.storyboard in Resources */,
 				A0CF736719EC5BBA004B7D66 /* LaunchScreen.xib in Resources */,
 				A0CF736419EC5BBA004B7D66 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0CF736A19EC5BBA004B7D66 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,23 +200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0CF736819EC5BBA004B7D66 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0CF737319EC5BBA004B7D66 /* Gymnasium_VilshofenTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A0CF736E19EC5BBA004B7D66 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0CF735619EC5BBA004B7D66 /* Gymnasium Vilshofen */;
-			targetProxy = A0CF736D19EC5BBA004B7D66 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A0CF736019EC5BBA004B7D66 /* Main.storyboard */ = {
@@ -390,40 +321,6 @@
 			};
 			name = Release;
 		};
-		A0CF737A19EC5BBA004B7D66 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Gymnasium VilshofenTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gymnasium Vilshofen.app/Gymnasium Vilshofen";
-			};
-			name = Debug;
-		};
-		A0CF737B19EC5BBA004B7D66 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Gymnasium VilshofenTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gymnasium Vilshofen.app/Gymnasium Vilshofen";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -441,15 +338,6 @@
 			buildConfigurations = (
 				A0CF737719EC5BBA004B7D66 /* Debug */,
 				A0CF737819EC5BBA004B7D66 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0CF737919EC5BBA004B7D66 /* Build configuration list for PBXNativeTarget "Gymnasium VilshofenTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0CF737A19EC5BBA004B7D66 /* Debug */,
-				A0CF737B19EC5BBA004B7D66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
